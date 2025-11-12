@@ -1,4 +1,3 @@
-# blenderscript-iso.py (drop-in)
 import bpy
 import mathutils
 
@@ -104,7 +103,7 @@ for target_obj in bpy.context.selected_objects:
         inst.location = c
         inst.rotation_mode = 'QUATERNION'
         inst.rotation_quaternion = Rq
-        inst.scale = (s, s, 1.0)           # << uniform in-plane scale (no anisotropy)
+        inst.scale = (s, s, 1.0)           # uniform in-plane scale (no anisotropy)
 
         # per-face color -> per-instance material
         col = get_poly_color(poly, mesh)
@@ -122,3 +121,4 @@ for target_obj in bpy.context.selected_objects:
     print(f"✅ {target_obj.name}: {placed} triangles placed")
 
 print(f"🎯 Total triangles placed: {total}")
+
